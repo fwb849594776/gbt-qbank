@@ -15,6 +15,7 @@ import java.util.List;
 public interface ExercisesService {
 	/**
 	 * 新增
+	 *
 	 * @param exercise
 	 * @return
 	 */
@@ -22,6 +23,7 @@ public interface ExercisesService {
 
 	/**
 	 * 删除
+	 *
 	 * @param ids
 	 * @return
 	 */
@@ -29,6 +31,7 @@ public interface ExercisesService {
 
 	/**
 	 * 修改
+	 *
 	 * @param exercise
 	 * @return
 	 */
@@ -36,10 +39,11 @@ public interface ExercisesService {
 
 	/**
 	 * 查询列表
+	 *
 	 * @param category:所属分类: 0-练习题；1-历年真题；2-同学分享题
-	 * @param type:类型: 0-单选题，1-多选题，2-判断改错题，3-简答题，4-案例分析，5-论文
-	 * @param pageNo: 页码,第几页: 默认0第一页
-	 * @param pageSize: 页容量, 每天多少条: 默认每页10条
+	 * @param type:类型:       0-单选题，1-多选题，2-判断改错题，3-简答题，4-案例分析，5-论文
+	 * @param pageNo:        页码,第几页: 默认0第一页
+	 * @param pageSize:      页容量, 每天多少条: 默认每页10条
 	 * @return
 	 */
 	Result findAll(String category, String type, int pageNo, int pageSize);

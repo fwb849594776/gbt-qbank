@@ -120,8 +120,4 @@ public class Exercise extends BaseModel {
 	@Column(name = "attr4")
 	@JsonProperty("attr4")
 	private String attr4;
-
-	@Column(name = "create_time")
-	@JsonProperty("create_time")
-	private Date createTime;
 }

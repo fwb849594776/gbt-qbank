@@ -10,5 +10,5 @@ import javax.servlet.http.HttpServletRequest;
  * <p>@version: 1.0</p>
  */
 public interface CoreService {
-	public  String processRequest(HttpServletRequest request) ;
+	String processRequest(HttpServletRequest request);
 }

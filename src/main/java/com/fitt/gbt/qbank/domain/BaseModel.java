@@ -1,7 +1,10 @@
 package com.fitt.gbt.qbank.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Field;
 
+import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,6 +18,19 @@ import java.util.Date;
 @Data
 public class BaseModel implements Serializable {
 	private static final long serialVersionUID = 2390983430457304660L;
+	@Column(name = "create_time")
+	@Field("create_time")
+	@JsonProperty("create_time")
 	private Date createTime;
-	private Date endTime;
+
+	@Column(name = "update_time")
+	@Field("update_time")
+	@JsonProperty("update_time")
+	private Date updateTime;
+
+	@JsonProperty("page_no")
+	private int pageNo;
+
+	@JsonProperty("page_size")
+	private int pageSize;
 }
