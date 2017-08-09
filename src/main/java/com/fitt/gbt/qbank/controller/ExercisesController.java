@@ -5,8 +5,11 @@ import com.fitt.gbt.qbank.domain.Exercise;
 import com.fitt.gbt.qbank.service.ExercisesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,5 +58,22 @@ public class ExercisesController {
 						  @RequestParam(value = "page_size", defaultValue = "10") int pageSize) {
 
 		return exercisesService.findAll(category, type, pageNo, pageSize);
+	}
+
+	@GetMapping(value = "list")
+	public String listPage(ModelMap modelMap) {
+		List<Exercise> exerciseList = exercisesService.list(null, null, 0, 10);
+
+		modelMap.put("dataList", exerciseList);
+		modelMap.put("name", "每日一练");
+		return "exercises/list";
+	}
+
+	@GetMapping(value = "{id}")
+	public String findById(Model model, @PathVariable("id") Integer id) {
+		Exercise exercise = exercisesService.findById(id);
+
+		model.addAttribute("data", exercise);
+		return "exercises/edit";
 	}
 }

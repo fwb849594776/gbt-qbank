@@ -139,4 +139,26 @@ public class ExercisesServiceImpl implements ExercisesService {
 		}
 		return result;
 	}
+
+	@Override
+	public List<Exercise> list(String category, String type, int pageNo, int pageSize) {
+		List<Exercise> dataList = new ArrayList<>();
+		try {
+			Result result = findAll(category, type, pageNo, pageSize);
+			if (StatusCodeEnum.SUCCESS.code() == result.getCode() && null != result.getData()) {
+				Page<Exercise> page = (Page<Exercise>) result.getData();
+				if (null != page && null != page.getContent())
+					dataList = page.getContent();
+			}
+		} catch (Exception e) {
+			logger.error("......findAll() occurred error!", e);
+		}
+		return dataList;
+	}
+
+	@Override
+	public Exercise findById(Integer id) {
+		Exercise exercise = exercisesRepository.findOne(id);
+		return exercise;
+	}
 }
