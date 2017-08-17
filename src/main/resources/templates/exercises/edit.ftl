@@ -40,7 +40,7 @@
         <br>
         选项D: ${data.optionD}
         <br>
-        参考大拿: ${data.answerSingle}
+        参考答案: ${data.answerSingle}
     </div>
 </div>
 
