@@ -80,11 +80,11 @@ public class ExercisesController {
 
 	@GetMapping(value = "test/paper")
 	public String getTestPaper(Model model) {
-		List<Exercise> radioList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_RADIO.type()), 0, 40);//40
-		List<Exercise> multiList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_MULTI.type()), 0, 30);//40
-		List<Exercise> judgeList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_JUDGE.type()), 0, 10);//20
-		List<Exercise> shortList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_SHORT.type()), 0, 3);// 5
-		List<Exercise> caseList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_CASE.type()), 0, 2);// 5
+		List<Exercise> radioList = exercisesService.list(null, QuestionsEnum.TYPE_RADIO.typeString(), 0, 40);//40
+		List<Exercise> multiList = exercisesService.list(null, QuestionsEnum.TYPE_MULTI.typeString(), 0, 30);//40
+		List<Exercise> judgeList = exercisesService.list(null, QuestionsEnum.TYPE_JUDGE.typeString(), 0, 10);//20
+		List<Exercise> shortList = exercisesService.list(null, QuestionsEnum.TYPE_SHORT.typeString(), 0, 3);// 5
+		List<Exercise> caseList = exercisesService.list(null, QuestionsEnum.TYPE_CASE.typeString(), 0, 2);// 5
 		model.addAttribute("radioList", radioList);
 		model.addAttribute("multiList", multiList);
 		model.addAttribute("judgeList", judgeList);

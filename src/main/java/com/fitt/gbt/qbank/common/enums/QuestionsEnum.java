@@ -28,6 +28,9 @@ public enum QuestionsEnum {
 	public int type() {
 		return this.type;
 	}
+	public String typeString() {
+		return String.valueOf(this.type);
+	}
 
 	public String message() {
 		return this.desc;

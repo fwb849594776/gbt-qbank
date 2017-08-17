@@ -25,6 +25,9 @@ public enum QuestionSourceEnum {
 	public int source() {
 		return this.source;
 	}
+	public String sourceString() {
+		return String.valueOf(this.source);
+	}
 
 	public String message() {
 		return this.desc;
