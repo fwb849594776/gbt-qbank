@@ -2,6 +2,7 @@ package com.fitt.gbt.qbank.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -120,4 +121,10 @@ public class Exercise extends BaseModel {
 	@Column(name = "attr4")
 	@JsonProperty("attr4")
 	private String attr4;
+
+	/**
+	 * 用户答案
+	 */
+	@JsonProperty("user_answer")
+	private transient String userAnswer;
 }

@@ -10,6 +10,11 @@
 
     <name>question-bank</name>
 
+    <!--
+       spring boot 父节点依赖,
+       引入这个之后相关的引入就不需要添加version配置，
+       spring boot会自动选择最合适的版本进行添加。
+     -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -30,6 +35,7 @@
     </properties>
     <!-- 依赖管理-->
     <dependencies>
+        <!-- spring boot web支持：mvc,aop... -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -102,17 +108,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <!--添加Groovy模版支持-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-groovy-templates</artifactId>
-        </dependency>
-        <!--thymeleaf模版引擎-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!--Freemarker模版引擎-->
         <dependency>

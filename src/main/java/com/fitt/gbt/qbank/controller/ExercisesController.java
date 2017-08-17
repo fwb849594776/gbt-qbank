@@ -1,5 +1,6 @@
 package com.fitt.gbt.qbank.controller;
 
+import com.fitt.gbt.qbank.common.enums.QuestionsEnum;
 import com.fitt.gbt.qbank.common.model.Result;
 import com.fitt.gbt.qbank.domain.Exercise;
 import com.fitt.gbt.qbank.service.ExercisesService;
@@ -75,5 +76,20 @@ public class ExercisesController {
 
 		model.addAttribute("data", exercise);
 		return "exercises/edit";
+	}
+
+	@GetMapping(value = "test/paper")
+	public String getTestPaper(Model model) {
+		List<Exercise> radioList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_RADIO.type()), 0, 40);//40
+		List<Exercise> multiList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_MULTI.type()), 0, 30);//40
+		List<Exercise> judgeList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_JUDGE.type()), 0, 10);//20
+		List<Exercise> shortList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_SHORT.type()), 0, 3);// 5
+		List<Exercise> caseList = exercisesService.list(null, String.valueOf(QuestionsEnum.TYPE_CASE.type()), 0, 2);// 5
+		model.addAttribute("radioList", radioList);
+		model.addAttribute("multiList", multiList);
+		model.addAttribute("judgeList", judgeList);
+		model.addAttribute("shortList", shortList);
+		model.addAttribute("caseList", caseList);
+		return "exercises/exercise";
 	}
 }
