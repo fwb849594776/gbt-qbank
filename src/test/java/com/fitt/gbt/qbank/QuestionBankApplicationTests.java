@@ -11,6 +11,9 @@ public class QuestionBankApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		for (int b = Integer.parseInt("0101",2); b <= Integer.parseInt("1111",2); b++) {
+			System.out.println(b);
+		}
 	}
 
 }

@@ -13,8 +13,8 @@ Spring Boot + Spring Data JPA
 
 ## 打包运行
 #### 打包
-`mvn clen package -Dmaven.test.skip=true;`
-`mvn clen package -DskipTests`
+`mvn clean package -Dmaven.test.skip=true;`
+`mvn clean package -DskipTests`
 
 #### 运行: 
 `java -jar -Dfile.encoding=UTF-8 question-bank-0.0.1-SNAPSHOT.jar`
