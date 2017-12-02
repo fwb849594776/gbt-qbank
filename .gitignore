@@ -7,3 +7,6 @@ target/
 *.ipr
 /*.iml
 /logs
+/.settings
+/.classpath
+/.project
