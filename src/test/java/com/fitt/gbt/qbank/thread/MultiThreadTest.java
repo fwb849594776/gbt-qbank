@@ -10,7 +10,7 @@ package com.fitt.gbt.qbank.thread;
 public class MultiThreadTest {
 
 	public static void main(String[] args) {
-		MultiThread mt = new MultiThread();
+		final MultiThread mt = new MultiThread();
 
 		new Thread(new Runnable() {
 			@Override

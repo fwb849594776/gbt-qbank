@@ -111,7 +111,7 @@ public class ExercisesServiceImpl implements ExercisesService {
 	}
 
 	@Override
-	public Result findAll(String category, String type, int pageNo, int pageSize) {
+	public Result findAll(final String category, final String type, final int pageNo, final int pageSize) {
 		Result result = ResultUtil.success();
 
 		try {

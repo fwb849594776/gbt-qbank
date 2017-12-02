@@ -32,7 +32,7 @@ public class RpcFramework {
 
 		System.out.println("Export service " + service.getClass().getName() + " on port " + port);
 
-		ServerSocket serverSocket = new ServerSocket(port);
+		final ServerSocket serverSocket = new ServerSocket(port);
 		for (; ; ) {
 			try {
 				final Socket socket = serverSocket.accept();
