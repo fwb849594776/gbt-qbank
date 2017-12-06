@@ -3,7 +3,7 @@ package com.fitt.gbt.qbank.algorithm;
 /**
  * <p>@Description: 快速排序</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-10-19</p>
  * <p>@version: 1.0</p>
  */

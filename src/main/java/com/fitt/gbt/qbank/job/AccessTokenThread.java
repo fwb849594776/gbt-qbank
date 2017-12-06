@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * 每7200秒执行一次
  * </p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-08-01</p>
  * <p>@version: 1.0</p>
  */
@@ -22,6 +22,7 @@ import org.springframework.stereotype.Component;
 public class AccessTokenThread {
 	private static Logger log = LoggerFactory.getLogger(AccessTokenThread.class);
 
+	// 公众号ID:
 	// 第三方用户唯一凭证
 	public static String appid = "";
 

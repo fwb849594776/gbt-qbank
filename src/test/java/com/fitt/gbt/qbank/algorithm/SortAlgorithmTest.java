@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * <p>@Description: 排序算法实现测试</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-09-29</p>
  * <p>@version: 1.0</p>
  */

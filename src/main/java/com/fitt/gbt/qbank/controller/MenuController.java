@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * <p>@Description: 对订阅号的菜单的操作</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-08-01</p>
  * <p>@version: 1.0</p>
  */

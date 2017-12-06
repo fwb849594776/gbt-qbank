@@ -7,7 +7,7 @@ import java.security.cert.X509Certificate;
 /**
  * <p>@Description: 证书信任管理器（用于https请求）</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-08-01</p>
  * <p>@version: 1.0</p>
  */

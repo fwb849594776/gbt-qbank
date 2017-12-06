@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * <p>@Description: 消息基类（普通用户 -> 公众帐号）</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-08-01</p>
  * <p>@version: 1.0</p>
  */

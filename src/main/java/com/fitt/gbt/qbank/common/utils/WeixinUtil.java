@@ -3,6 +3,7 @@ package com.fitt.gbt.qbank.common.utils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.fitt.gbt.qbank.common.model.AccessToken;
+import com.fitt.gbt.qbank.job.AccessTokenThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,7 @@ import java.net.URL;
 /**
  * <p>@Description: com.fitt.gbt.qbank.common.utils</p>
  * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Author: Miles[ZhengCongChun]</p>
  * <p>@Created: 2017-08-01</p>
  * <p>@version: 1.0</p>
  */
@@ -83,6 +84,7 @@ public class WeixinUtil {
 			inputStream = null;
 			httpUrlConn.disconnect();
 			jsonObject = JSONObject.parseObject(buffer.toString());
+			logger.info(" get Access_token return : {}", jsonObject);
 		} catch (ConnectException ce) {
 			logger.error("Weixin server connection timed out.");
 		} catch (Exception e) {
@@ -119,5 +121,12 @@ public class WeixinUtil {
 			}
 		}
 		return accessToken;
+	}
+
+	public static void main(String[] args) {
+		AccessToken accessToken = getAccessToken(AccessTokenThread.appid, AccessTokenThread.appsecret);
+		if (null != accessToken) {
+			System.out.println(accessToken.getToken());
+		}
 	}
 }
