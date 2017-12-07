@@ -52,4 +52,14 @@ public class CoreController {
         return "weixin/index";
     }
 
+    @RequestMapping(value = "/layui/template")
+    public String laytpl() {
+        return "laytpl";
+    }
+
+    @RequestMapping(value = "/main")
+    public String main() {
+        return "main";
+    }
+
 }

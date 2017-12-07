@@ -1,3 +1,4 @@
+<#assign base=request.contextPath />
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <span>穷云</span>
 <ul>
     <li>
-        <img src="../../static/fist.jpg">
+        <img src="${base}/fist.jpg">
     </li>
     <br>
 </ul>

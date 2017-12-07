@@ -24,10 +24,10 @@ public class AccessTokenThread {
 
 	// 公众号ID:
 	// 第三方用户唯一凭证
-	public static String appid = "";
+	public static String appid = "wx5c3de353fa9ff44b";
 
 	// 第三方用户唯一凭证密钥
-	public static String appsecret = "";
+	public static String appsecret = "4d42ffb7cbfdfdcb7e6ef743273dc71d";
 	// 第三方用户唯一凭证
 	public static AccessToken accessToken = null;
 
