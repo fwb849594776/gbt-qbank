@@ -1,3 +1,53 @@
+server:
+  context-path: /qbank
+  port: 8877
+
+# DataSource Jdbc Config
 spring:
-  profiles:
-    active: develop
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/residence?useUnicode=true&characterEncoding=gbk
+    username: root
+    password: mysqlroot
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# View Level Control Config: MVC access templates/*.html; 与下面 themeleaf方式访问二选一
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+    static-path-pattern: /static/**
+#  thymeleaf:
+#    mode: HTML5
+#    encoding: UTF-8
+#    content-type: text/html
+## Develop Mode Close Cache for Real Page
+#    cache: false
+## thymeleaf direct access static/html(or mvc access)
+#    prefix: classpath:/static/
+#    suffix: .html
+
+
+# Mybatis Config
+mybatis:
+#  config-location: classpath:com/fitt/gbt/qbank/mapper/*Mapper.xml
+  type-aliases-package: com.fitt.gbt.qbank.domain
+
+
+
+# Log config
+logging:
+  level:
+    root: INFO
+  file: ./logs/qbank.log
+
+# Custom package Logging Level
+logging.level.org.apache.ibatis: WARN
+logging.level.org.mybatis.spring: WARN
+logging.level.org.mybatis.spring.boot: WARN
+logging.level.org.springframework.data: WARN
+logging.level.org.springframework.web: WARN
+logging.level.org.apache: WARN
+logging.level.org.apache.tomcat: WARN
+logging.level.org.apache.tomcat.util.net: WARN
+

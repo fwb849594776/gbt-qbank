@@ -55,7 +55,7 @@ drop table if exists user;
 /*==============================================================*/
 /* Table: user                                                  */
 /*==============================================================*/
-create table user
+CREATE TABLE user
 (
   id                   int not null auto_increment comment 'id',
   user_type            int default 0 comment '用户类型：0-注册用户，1-qq用户，2-微信用户，3-新浪微博，4-facebook。。。。。',
@@ -77,4 +77,31 @@ create table user
 );
 
 alter table user comment '题库用户';
+
+
+/*==============================================================*/
+/* Table: order                                                  */
+/*==============================================================*/
+CREATE TABLE order_list
+(
+  id                  int not null auto_increment comment 'id',
+  username            varchar(32) DEFAULT NULL comment '用户名',
+  id_card             varchar(32) comment '身份证号码',
+  email               varchar(50) comment '邮箱',
+  weixin              varchar(50) comment '微信',
+  telephone           varchar(20) comment '手机号码',
+  area_code           varchar(16) comment '预约区域编码',
+  area_name           varchar(100) comment '预约区域名称',
+  order_type          tinyint(2) comment '预约类型: 1-预约, 2-捡漏',
+  residence_way       tinyint(2) default 0 comment '入户渠道: 1-, 2-, 3-, 4-, 5-',
+  order_money         decimal(10,2) DEFAULT NULL comment '应付费用',
+  paid_money          DECIMAL (10, 2) comment '已付费用',
+  require_date        datetime comment '预约要求日期时间',
+  status              int default 0 comment '状态:1-新提交，2-预约成功，3-预约失败，4-预约撤销，5-预约重试',
+  create_time         datetime default CURRENT_TIMESTAMP comment '创建时间',
+  modify_time         datetime default CURRENT_TIMESTAMP comment '修改时间',
+  primary key (id)
+);
+
+alter table order_list comment '订单表';
 
