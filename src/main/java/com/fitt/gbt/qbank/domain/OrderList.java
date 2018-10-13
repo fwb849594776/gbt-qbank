@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * <p> 订单表 </p>
  *
- * @author Chuck[ZhengCongChun]
+ * @author SixAwn
  * @since 2018-04-27
  */
 @Data

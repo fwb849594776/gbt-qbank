@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>@Description: Atomic原子自增运算测试</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-08-09</p>
  * <p>@version: 1.0</p>
  */

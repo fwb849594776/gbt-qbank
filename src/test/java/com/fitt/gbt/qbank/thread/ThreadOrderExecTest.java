@@ -5,8 +5,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * <p>@Description: 分别使用wait-notify 和 Lock交替打印出A\B</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-08-23</p>
  * <p>@version: 1.0</p>
  */

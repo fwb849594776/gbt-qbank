@@ -6,7 +6,7 @@ package com.fitt.gbt.qbank.common.enums;
 /**
  * 预约服务部门
  *
- * @author <a href="mailto:congchun.zcc@alibaba-inc.com">congchun.zcc</a>
+ * @author <a href="mailto:congchun.zcc@gmail.com">congchun.zcc</a>
  * @version 1.0.0
  * @since 2018/04/28
  */

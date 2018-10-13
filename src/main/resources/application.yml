@@ -1,5 +1,4 @@
 server:
-  context-path: /qbank
   port: 8877
 
 # DataSource Jdbc Config
@@ -27,18 +26,10 @@ spring:
 #    prefix: classpath:/static/
 #    suffix: .html
 
-
-# Mybatis Config
-mybatis:
-#  config-location: classpath:com/fitt/gbt/qbank/mapper/*Mapper.xml
-  type-aliases-package: com.fitt.gbt.qbank.domain
-
-
-
 # Log config
 logging:
   level:
-    root: INFO
+    root: DEBUG
   file: ./logs/qbank.log
 
 # Custom package Logging Level

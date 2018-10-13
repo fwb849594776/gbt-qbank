@@ -2,8 +2,8 @@ package com.fitt.gbt.qbank.common.enums;
 
 /**
  * <p>@Description: 状态码枚举类</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-07-19</p>
  * <p>@version: 1.0</p>
  */

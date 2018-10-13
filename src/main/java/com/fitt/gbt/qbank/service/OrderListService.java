@@ -5,12 +5,12 @@ package com.fitt.gbt.qbank.service;
 
 import com.fitt.gbt.qbank.common.enums.StatusCodeEnum;
 import com.fitt.gbt.qbank.common.model.Result;
+import com.fitt.gbt.qbank.common.utils.ApplicationContextUtil;
 import com.fitt.gbt.qbank.common.utils.ResultUtil;
 import com.fitt.gbt.qbank.domain.OrderList;
 import com.fitt.gbt.qbank.mapper.OrderListMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -29,8 +29,8 @@ import java.util.List;
 public class OrderListService {
     private static final Logger logger = LoggerFactory.getLogger(OrderListService.class);
 
-    @Autowired
-    private OrderListMapper orderListMapper;
+    //@Autowired
+    private OrderListMapper orderListMapper = (OrderListMapper)ApplicationContextUtil.getBean("orderListMapper");
 
     public Result add(OrderList order) {
         Result<OrderList> result = ResultUtil.success();
@@ -49,7 +49,8 @@ public class OrderListService {
                 return ResultUtil.error(StatusCodeEnum.ERROR_DATA_EXISTED);
             }
             order.setCreateTime(new Date());
-            result.setData(orderListMapper.insert(order));
+            int ret = orderListMapper.insert(order);
+            result.setData(order);
         } catch (Exception e) {
             result = ResultUtil.error();
             logger.error("......findAll() occurred error!", e);

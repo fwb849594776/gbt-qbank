@@ -2,6 +2,7 @@ package com.fitt.gbt.qbank.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.fitt.gbt.qbank.common.model.Result;
+import com.fitt.gbt.qbank.common.utils.ApplicationContextUtil;
 import com.fitt.gbt.qbank.common.utils.ResultUtil;
 import com.fitt.gbt.qbank.domain.OrderList;
 import com.fitt.gbt.qbank.service.OrderListService;
@@ -12,15 +13,15 @@ import org.springframework.web.bind.annotation.*;
 /**
  * <p> 订单表 前端控制器 </p>
  *
- * @author Chuck[ZhengCongChun]
+ * @author SixAwn
  * @since 2018-04-27
  */
 @Controller
 @RequestMapping("/order")
 public class OrderListController {
 
-    @Autowired
-    private OrderListService orderListService;
+    //@Autowired
+    private OrderListService orderListService = (OrderListService)ApplicationContextUtil.getBean("orderListService");
 
     @PostMapping
     @ResponseBody

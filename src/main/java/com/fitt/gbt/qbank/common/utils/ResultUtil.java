@@ -5,8 +5,8 @@ import com.fitt.gbt.qbank.common.model.Result;
 
 /**
  * <p>@Description: 相应结果帮助类</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-07-20</p>
  * <p>@version: 1.0</p>
  */

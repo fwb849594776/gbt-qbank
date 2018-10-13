@@ -21,7 +21,7 @@ import java.net.URL;
 /**
  * @Description: com.fitt.gbt.qbank.common.utils
  * @Copyright: Copyright(C) 2017 by FITT
- * @Author: Chuck[ZhengCongChun]
+ * @Author: SixAwn
  * @Created: 2017-08-01
  * @version: 1.0
  */

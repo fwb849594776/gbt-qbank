@@ -4,8 +4,8 @@ import org.junit.Test;
 
 /**
  * <p>@Description: 线程yield操作： yield不会永久放弃cpu</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-08-02</p>
  * <p>@version: 1.0</p>
  */

@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * <p>@Description: com.fitt.gbt.qbank.thread</p>
- * <p>@Copyright: Copyright(C) 2017 by AIRAG</p>
- * <p>@Author: Chuck[ZhengCongChun]</p>
+ * <p>@Copyright: Copyright(C) 2017 by FITT</p>
+ * <p>@Author: SixAwn</p>
  * <p>@Created: 2017-08-16</p>
  * <p>@version: 1.0</p>
  */
