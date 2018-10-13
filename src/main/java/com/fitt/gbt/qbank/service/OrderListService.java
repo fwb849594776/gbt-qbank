@@ -5,12 +5,12 @@ package com.fitt.gbt.qbank.service;
 
 import com.fitt.gbt.qbank.common.enums.StatusCodeEnum;
 import com.fitt.gbt.qbank.common.model.Result;
-import com.fitt.gbt.qbank.common.utils.ApplicationContextUtil;
 import com.fitt.gbt.qbank.common.utils.ResultUtil;
 import com.fitt.gbt.qbank.domain.OrderList;
 import com.fitt.gbt.qbank.mapper.OrderListMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -25,27 +25,27 @@ import java.util.List;
  * @version 1.0.0
  * @since 2018/04/27
  */
-@Service("orderListService")
+@Service
 public class OrderListService {
     private static final Logger logger = LoggerFactory.getLogger(OrderListService.class);
 
-    //@Autowired
-    private OrderListMapper orderListMapper = (OrderListMapper)ApplicationContextUtil.getBean("orderListMapper");
+    @Autowired
+    private OrderListMapper orderListMapper;
 
     public Result add(OrderList order) {
-        Result<OrderList> result = ResultUtil.success();
+        Result result = ResultUtil.success();
 
         try {
             // 校验参数
             if (null == order || StringUtils.isEmpty(order.getIdCard())) {
                 return ResultUtil.parameterMissing("idCard");
             }
-            if (null == order || StringUtils.isEmpty(order.getTelephone())) {
+            if (StringUtils.isEmpty(order.getTelephone())) {
                 return ResultUtil.parameterMissing("telephone");
             }
             // 查询是否已经存在
-            List<OrderList> orders = null;
-            if (null != orders && !orders.isEmpty()) {
+            List<OrderList> orders = orderListMapper.selectList(null);
+            if (!orders.isEmpty()) {
                 return ResultUtil.error(StatusCodeEnum.ERROR_DATA_EXISTED);
             }
             order.setCreateTime(new Date());
@@ -76,8 +76,8 @@ public class OrderListService {
         return result;
     }
 
-    public Result<OrderList> update(OrderList exercise) {
-        Result<OrderList> result = ResultUtil.success();
+    public Result update(OrderList exercise) {
+        Result result = ResultUtil.success();
 
         try {
             if (null == exercise || StringUtils.isEmpty(exercise.getId())) {

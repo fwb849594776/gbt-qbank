@@ -11,12 +11,12 @@ import lombok.Data;
  * <p>@version: 1.0</p>
  */
 @Data
-public class Result<T> {
+public class Result {
 	private Integer code;
 
 	private String message;
 
-	private T data;
+	private Object data;
 
 	public Result() {
 	}
@@ -27,7 +27,7 @@ public class Result<T> {
 		this.data = null;
 	}
 
-	public Result(StatusCodeEnum statusCode, T data) {
+	public Result(StatusCodeEnum statusCode, Object data) {
 		this.code = statusCode.code();
 		this.message = statusCode.message();
 		this.data = data;
@@ -39,7 +39,7 @@ public class Result<T> {
 		this.data = null;
 	}
 
-	public Result(int code, String message, T data) {
+	public Result(int code, String message, Object data) {
 		this.code = code;
 		this.message = message;
 		this.data = data;

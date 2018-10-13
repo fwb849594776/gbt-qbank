@@ -9,6 +9,10 @@ spring:
     password: mysqlroot
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+# JSON返回时间格式统一转换
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 # View Level Control Config: MVC access templates/*.html; 与下面 themeleaf方式访问二选一
   mvc:
