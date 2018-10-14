@@ -6,12 +6,11 @@ package com.fitt.gbt.qbank.job;
 import com.alibaba.fastjson.JSON;
 import com.fitt.gbt.qbank.common.model.RecordDTO;
 import com.fitt.gbt.qbank.common.model.order.Appointment;
-import com.fitt.gbt.qbank.domain.OrderList;
+import com.fitt.gbt.qbank.domain.Order;
 import com.fitt.gbt.qbank.service.RecordService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * 提交预约任务
@@ -34,9 +33,9 @@ public class SubmitAppointmentTask implements Runnable {
     /**
      * 预约人信息
      */
-    private OrderList orderList;
+    private Order orderList;
 
-    public SubmitAppointmentTask(RecordDTO recordDTO, OrderList orderList) {
+    public SubmitAppointmentTask(RecordDTO recordDTO, Order orderList) {
         this.recordDTO = recordDTO;
         this.orderList = orderList;
     }

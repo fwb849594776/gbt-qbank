@@ -3,11 +3,14 @@
  */
 package com.fitt.gbt.qbank.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fitt.gbt.qbank.common.enums.StatusCodeEnum;
 import com.fitt.gbt.qbank.common.model.Result;
 import com.fitt.gbt.qbank.common.utils.ResultUtil;
-import com.fitt.gbt.qbank.domain.OrderList;
-import com.fitt.gbt.qbank.mapper.OrderListMapper;
+import com.fitt.gbt.qbank.domain.Order;
+import com.fitt.gbt.qbank.mapper.OrderMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +29,13 @@ import java.util.List;
  * @since 2018/04/27
  */
 @Service
-public class OrderListService {
-    private static final Logger logger = LoggerFactory.getLogger(OrderListService.class);
+public class OrderService {
+    private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
 
     @Autowired
-    private OrderListMapper orderListMapper;
+    private OrderMapper orderMapper;
 
-    public Result add(OrderList order) {
+    public Result add(Order order) {
         Result result = ResultUtil.success();
 
         try {
@@ -44,13 +47,15 @@ public class OrderListService {
                 return ResultUtil.parameterMissing("telephone");
             }
             // 查询是否已经存在
-            List<OrderList> orders = orderListMapper.selectList(null);
+            QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("id_card", order.getIdCard());
+            List<Order> orders = orderMapper.selectList(queryWrapper);
             if (!orders.isEmpty()) {
                 return ResultUtil.error(StatusCodeEnum.ERROR_DATA_EXISTED);
             }
             order.setCreateTime(new Date());
-            int ret = orderListMapper.insert(order);
-            result.setData(order);
+            int ret = orderMapper.insert(order);
+            result.setData(ret);
         } catch (Exception e) {
             result = ResultUtil.error();
             logger.error("......findAll() occurred error!", e);
@@ -64,11 +69,7 @@ public class OrderListService {
             if (null == ids || ids.isEmpty()) {
                 return ResultUtil.parameterMissing("id");
             }
-            //List<OrderList> orders = orderListRepository.findAll(ids);
-            //if (null == orders || orders.isEmpty()) {
-            //    return ResultUtil.error(StatusCodeEnum.ERROR_DATA_NOT_EXISTED);
-            //}
-            //orderListRepository.delete(orders);
+            orderMapper.deleteBatchIds(ids);
         } catch (Exception e) {
             result = ResultUtil.error();
             logger.error("......findAll() occurred error!", e);
@@ -76,24 +77,20 @@ public class OrderListService {
         return result;
     }
 
-    public Result update(OrderList exercise) {
+    public Result update(Order condition) {
         Result result = ResultUtil.success();
 
         try {
-            if (null == exercise || StringUtils.isEmpty(exercise.getId())) {
+            if (null == condition || StringUtils.isEmpty(condition.getId())) {
                 return ResultUtil.error(StatusCodeEnum.ERROR_REQUEST_FORMAT);
             }
 
-            //OrderList data = orderListRepository.findOne(exercise.getId());
-            //if (null == data) {
-            //    return ResultUtil.error(StatusCodeEnum.ERROR_DATA_NOT_EXISTED);
-            //}
-            //
-            //BeanUtil.copyProperties(exercise, data);
-            //
-            //orderListRepository.saveAndFlush(data);
-            //
-            //result.setData(data);
+            Order order = orderMapper.selectById(condition.getId());
+            if (null == order) {
+                return ResultUtil.error(StatusCodeEnum.ERROR_DATA_NOT_EXISTED);
+            }
+
+            orderMapper.updateById(order);
         } catch (Exception e) {
             result = ResultUtil.error();
             logger.error("......findAll() occurred error!", e);
@@ -105,26 +102,9 @@ public class OrderListService {
         Result result = ResultUtil.success();
 
         try {
-            //Pageable pageable = new PageRequest(pageNo, pageSize, Sort.Direction.ASC, "id");
-
-            //Page<OrderList> pages = orderListRepository.findAll(new Specification<OrderList>() {
-            //    @Override
-            //    public Predicate toPredicate(Root<OrderList> root, CriteriaQuery<?> query,
-            //                                 CriteriaBuilder criteriaBuilder) {
-            //        List<Predicate> list = new ArrayList<Predicate>();
-            //        if (!StringUtils.isEmpty(idCard)) {
-            //            list.add(
-            //                criteriaBuilder.equal(root.get("idCard").as(String.class), idCard));
-            //        }
-            //        if (!StringUtils.isEmpty(telephone)) {
-            //            list.add(criteriaBuilder.equal(root.get("telephone").as(String.class), telephone));
-            //        }
-            //        Predicate[] predicates = new Predicate[list.size()];
-            //        return criteriaBuilder.and(list.toArray(predicates));
-            //    }
-            //}, pageable);
-
-            //result.setData(pages);
+            IPage<Order> page = new Page<>();
+            QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
+            IPage<Order> orderIPage = orderMapper.selectPage(page, queryWrapper);
         } catch (Exception e) {
             result = ResultUtil.error();
             logger.error("......findAll() occurred error!", e);
@@ -132,13 +112,12 @@ public class OrderListService {
         return result;
     }
 
-    public List<OrderList> list(String idCard, String telephone, int pageNo, int pageSize) {
-        List<OrderList> dataList = new ArrayList<>();
+    public List<Order> list(String idCard, String telephone, int pageNo, int pageSize) {
+        List<Order> dataList = new ArrayList<>();
         try {
             Result result = findAll(idCard, telephone, pageNo, pageSize);
             if (StatusCodeEnum.SUCCESS.code() == result.getCode() && null != result.getData()) {
-                //Page<OrderList> page = (Page<OrderList>)result.getData();
-                //if (null != page && null != page.getContent()) { dataList = page.getContent(); }
+               dataList = (List<Order>)result.getData();
             }
         } catch (Exception e) {
             logger.error("......findAll() occurred error!", e);
@@ -146,11 +125,11 @@ public class OrderListService {
         return dataList;
     }
 
-    public OrderList findById(Integer id) {
-        return orderListMapper.selectById(id);
+    public Order findById(Integer id) {
+        return orderMapper.selectById(id);
     }
 
-    public List<OrderList> findAppointmentOrderList() {
+    public List<Order> findAppointmentOrderList() {
         return null;
     }
 }

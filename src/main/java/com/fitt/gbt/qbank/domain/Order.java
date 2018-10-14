@@ -1,7 +1,9 @@
 package com.fitt.gbt.qbank.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,7 +15,9 @@ import java.util.Date;
  * @since 2018-04-27
  */
 @Data
-public class OrderList extends BaseModel {
+@EqualsAndHashCode(callSuper = true)
+@TableName("order_list")
+public class Order extends BaseModel {
     private static final long serialVersionUID = -5126886599122250604L;
     /**
      * id

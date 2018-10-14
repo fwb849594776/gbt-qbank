@@ -9,7 +9,7 @@ import com.fitt.gbt.qbank.common.constants.OrderConstants;
 import com.fitt.gbt.qbank.common.model.RecordDTO;
 import com.fitt.gbt.qbank.common.model.order.*;
 import com.fitt.gbt.qbank.common.utils.HttpClientUtil;
-import com.fitt.gbt.qbank.domain.OrderList;
+import com.fitt.gbt.qbank.domain.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
@@ -160,7 +160,7 @@ public class RecordService {
         }
     }
 
-    public void doSendTips(OrderList orderList) {
+    public void doSendTips(Order orderList) {
 
     }
 }

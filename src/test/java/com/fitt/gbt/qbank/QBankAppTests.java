@@ -1,9 +1,9 @@
 package com.fitt.gbt.qbank;
 
 import com.alibaba.fastjson.JSON;
-import com.fitt.gbt.qbank.domain.OrderList;
-import com.fitt.gbt.qbank.mapper.OrderListMapper;
-import com.fitt.gbt.qbank.service.OrderListService;
+import com.fitt.gbt.qbank.domain.Order;
+import com.fitt.gbt.qbank.mapper.OrderMapper;
+import com.fitt.gbt.qbank.service.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +15,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class QBankAppTests {
 
     @Autowired
-    private OrderListService orderListService;
+    private OrderService orderListService;
 
     @Autowired
-    private OrderListMapper orderListMapper;
+    private OrderMapper orderListMapper;
 
     @Test
     public void testMapperFindOne() {
         Integer id = 1;
-        OrderList orderList = orderListService.findById(id);
+        Order orderList = orderListService.findById(id);
         System.out.println(JSON.toJSON(orderList));
     }
 
     @Test
     public void testServiceFindOne() {
         Integer id = 1;
-        OrderList orderList = orderListService.findById(id);
+        Order orderList = orderListService.findById(id);
         System.out.println(JSON.toJSON(orderList));
     }
 

@@ -3,8 +3,8 @@
  */
 package com.fitt.gbt.qbank.job;
 
-import com.fitt.gbt.qbank.domain.OrderList;
-import com.fitt.gbt.qbank.service.OrderListService;
+import com.fitt.gbt.qbank.domain.Order;
+import com.fitt.gbt.qbank.service.OrderService;
 import com.fitt.gbt.qbank.service.RecordService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +25,7 @@ public class SendTips4AppointmentTask implements Runnable {
     private static Logger logger = LoggerFactory.getLogger(SendTips4AppointmentTask.class);
 
     @Autowired
-    private OrderListService orderListService;
+    private OrderService orderListService;
 
     @Autowired
     private RecordService recordService;
@@ -34,7 +34,7 @@ public class SendTips4AppointmentTask implements Runnable {
     public void run() {
         try {
             logger.info("[SendTips4AppointmentTask.run] Start...");
-            List<OrderList> orderLists = orderListService.findAppointmentOrderList();
+            List<Order> orderLists = orderListService.findAppointmentOrderList();
 
             if (CollectionUtils.isEmpty(orderLists)) {
                 return;

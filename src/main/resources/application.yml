@@ -14,21 +14,9 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
-# View Level Control Config: MVC access templates/*.html; 与下面 themeleaf方式访问二选一
-  mvc:
-    view:
-      prefix: classpath:/templates/
-      suffix: .html
-    static-path-pattern: /static/**
-#  thymeleaf:
-#    mode: HTML5
-#    encoding: UTF-8
-#    content-type: text/html
-## Develop Mode Close Cache for Real Page
-#    cache: false
-## thymeleaf direct access static/html(or mvc access)
-#    prefix: classpath:/static/
-#    suffix: .html
+# Mybatis-Plus Config
+mybatis-plus:
+  mapper-locations: classpath/mapper/*Mapper.xml
 
 # Log config
 logging:
@@ -45,4 +33,3 @@ logging.level.org.springframework.web: WARN
 logging.level.org.apache: WARN
 logging.level.org.apache.tomcat: WARN
 logging.level.org.apache.tomcat.util.net: WARN
-

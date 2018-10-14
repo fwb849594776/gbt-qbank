@@ -8,12 +8,11 @@ import com.fitt.gbt.qbank.common.enums.ApptServiceItemEnum;
 import com.fitt.gbt.qbank.common.model.RecordDTO;
 import com.fitt.gbt.qbank.common.model.order.DayInfo;
 import com.fitt.gbt.qbank.common.utils.ApplicationContextUtil;
-import com.fitt.gbt.qbank.domain.OrderList;
-import com.fitt.gbt.qbank.service.OrderListService;
+import com.fitt.gbt.qbank.domain.Order;
+import com.fitt.gbt.qbank.service.OrderService;
 import com.fitt.gbt.qbank.service.RecordService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -31,14 +30,14 @@ public class QueryRecordCountTask implements Runnable {
 
     private RecordService recordService;
 
-    private OrderListService orderListService;
+    private OrderService orderListService;
 
     private DayInfo dayInfo;
 
     public QueryRecordCountTask(DayInfo dayInfo) {
         this.dayInfo = dayInfo;
         this.recordService = (RecordService)ApplicationContextUtil.getBean("recordService");
-        this.orderListService = (OrderListService)ApplicationContextUtil.getBean("orderListService");
+        this.orderListService = (OrderService)ApplicationContextUtil.getBean("orderListService");
     }
 
     @Override
@@ -49,7 +48,7 @@ public class QueryRecordCountTask implements Runnable {
             List<RecordDTO> recordDTOList = recordService.getCanOrderRecord(ApptServiceItemEnum.TECHNICIAN.getId(),
                 dayInfo.getDate());
 
-            List<OrderList> orderLists = orderListService.findAppointmentOrderList();
+            List<Order> orderLists = orderListService.findAppointmentOrderList();
 
             if (CollectionUtils.isEmpty(orderLists) && !CollectionUtils.isEmpty(recordDTOList)) {
                 logger.error("[QueryRecordCountTask.run] 唉···机会白白浪···没有人下单.");
@@ -63,7 +62,7 @@ public class QueryRecordCountTask implements Runnable {
                 if (orderListSize > recordDTOList.size()) {
                     orderLists = orderLists.subList(0, recordDTOList.size());
                 }
-                List<OrderList> finalOrderLists = orderLists;
+                List<Order> finalOrderLists = orderLists;
                 recordDTOList.forEach(recordDTO -> {
                     AsyncExecutor.ASYNC_APPT_SUBMIT_POOL.submit(
                         new SubmitAppointmentTask(recordDTO, finalOrderLists.get(index)));

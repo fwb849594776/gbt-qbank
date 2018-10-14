@@ -2,8 +2,8 @@ package com.fitt.gbt.qbank.controller;
 
 import com.fitt.gbt.qbank.common.model.Result;
 import com.fitt.gbt.qbank.common.utils.ResultUtil;
-import com.fitt.gbt.qbank.domain.OrderList;
-import com.fitt.gbt.qbank.service.OrderListService;
+import com.fitt.gbt.qbank.domain.Order;
+import com.fitt.gbt.qbank.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,21 +16,21 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping("/order")
-public class OrderListController {
+public class OrderController {
 
     @Autowired
-    private OrderListService orderListService;
+    private OrderService orderService;
 
     @PostMapping
     @ResponseBody
-    public Result add(@RequestBody OrderList order) {
-        return orderListService.add(order);
+    public Result add(@RequestBody Order order) {
+        return orderService.add(order);
     }
 
     @GetMapping(value = "{id}")
     @ResponseBody
     public Result findById(@PathVariable("id") Integer id) {
-        OrderList orderList = orderListService.findById(id);
+        Order orderList = orderService.findById(id);
         return ResultUtil.success(orderList);
     }
 
