@@ -98,6 +98,10 @@ public class OrderService {
         return result;
     }
 
+    public List<Order> findAll() {
+        return orderMapper.selectList(null);
+    }
+
     public Result findAll(final String idCard, final String telephone, final int pageNo, final int pageSize) {
         Result result = ResultUtil.success();
 

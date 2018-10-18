@@ -1,5 +1,7 @@
 server:
   port: 8877
+  servlet:
+    context-path: /qbank
 
 # DataSource Jdbc Config
 spring:
