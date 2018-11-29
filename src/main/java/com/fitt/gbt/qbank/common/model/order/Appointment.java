@@ -64,4 +64,83 @@ public class Appointment implements Serializable {
         return appointment;
     }
 
+    public String getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(String certificate) {
+        this.certificate = certificate;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getService_item_code() {
+        return service_item_code;
+    }
+
+    public void setService_item_code(String service_item_code) {
+        this.service_item_code = service_item_code;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getPredate() {
+        return predate;
+    }
+
+    public void setPredate(String predate) {
+        this.predate = predate;
+    }
+
+    public String getService_item_name() {
+        return service_item_name;
+    }
+
+    public void setService_item_name(String service_item_name) {
+        this.service_item_name = service_item_name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddressMsg() {
+        return addressMsg;
+    }
+
+    public void setAddressMsg(String addressMsg) {
+        this.addressMsg = addressMsg;
+    }
+
+    public String getAddressPhone() {
+        return addressPhone;
+    }
+
+    public void setAddressPhone(String addressPhone) {
+        this.addressPhone = addressPhone;
+    }
+
+    public String getOrg_code() {
+        return org_code;
+    }
+
+    public void setOrg_code(String org_code) {
+        this.org_code = org_code;
+    }
 }

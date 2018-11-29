@@ -28,4 +28,36 @@ public class Record implements Serializable {
     private Integer count;
 
     private String time;
+
+    public String getYYDate() {
+        return YYDate;
+    }
+
+    public void setYYDate(String YYDate) {
+        this.YYDate = YYDate;
+    }
+
+    public List<com.fitt.gbt.qbank.common.model.order.TimeRecord> getTimeRecord() {
+        return TimeRecord;
+    }
+
+    public void setTimeRecord(List<com.fitt.gbt.qbank.common.model.order.TimeRecord> timeRecord) {
+        TimeRecord = timeRecord;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 }

@@ -42,4 +42,51 @@ public class DayInfo implements Serializable {
      */
     private Integer Week;
 
+    public String getAM_S() {
+        return AM_S;
+    }
+
+    public void setAM_S(String AM_S) {
+        this.AM_S = AM_S;
+    }
+
+    public String getAM_E() {
+        return AM_E;
+    }
+
+    public void setAM_E(String AM_E) {
+        this.AM_E = AM_E;
+    }
+
+    public String getPM_S() {
+        return PM_S;
+    }
+
+    public void setPM_S(String PM_S) {
+        this.PM_S = PM_S;
+    }
+
+    public String getPM_E() {
+        return PM_E;
+    }
+
+    public void setPM_E(String PM_E) {
+        this.PM_E = PM_E;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public Integer getWeek() {
+        return Week;
+    }
+
+    public void setWeek(Integer week) {
+        Week = week;
+    }
 }

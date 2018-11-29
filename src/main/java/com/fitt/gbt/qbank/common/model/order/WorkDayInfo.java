@@ -28,5 +28,19 @@ public class WorkDayInfo implements Serializable {
      */
     private List<DayInfo> info;
 
+    public Integer getSucc() {
+        return Succ;
+    }
 
+    public void setSucc(Integer succ) {
+        Succ = succ;
+    }
+
+    public List<DayInfo> getInfo() {
+        return info;
+    }
+
+    public void setInfo(List<DayInfo> info) {
+        this.info = info;
+    }
 }

@@ -35,4 +35,36 @@ public class RecordDTO implements Serializable {
         this.count = count;
         this.time = time;
     }
+
+    public String getBizID() {
+        return BizID;
+    }
+
+    public void setBizID(String bizID) {
+        BizID = bizID;
+    }
+
+    public String getYYDate() {
+        return YYDate;
+    }
+
+    public void setYYDate(String YYDate) {
+        this.YYDate = YYDate;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 }

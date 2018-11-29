@@ -21,4 +21,20 @@ public class RecordCount implements Serializable {
     private Record Record;
 
     private Integer Succ;
+
+    public com.fitt.gbt.qbank.common.model.order.Record getRecord() {
+        return Record;
+    }
+
+    public void setRecord(com.fitt.gbt.qbank.common.model.order.Record record) {
+        Record = record;
+    }
+
+    public Integer getSucc() {
+        return Succ;
+    }
+
+    public void setSucc(Integer succ) {
+        Succ = succ;
+    }
 }

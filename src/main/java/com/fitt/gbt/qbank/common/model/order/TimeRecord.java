@@ -20,4 +20,20 @@ public class TimeRecord implements Serializable {
     private String Count;
 
     private String Time;
+
+    public String getCount() {
+        return Count;
+    }
+
+    public void setCount(String count) {
+        Count = count;
+    }
+
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
 }
