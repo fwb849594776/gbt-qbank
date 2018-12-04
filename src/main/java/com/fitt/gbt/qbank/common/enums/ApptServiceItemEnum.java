@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2004-2018 by UCWeb All rights reserved
+ * Copyright (c) 2004-2018 by Fitt.inc All rights reserved
  */
 package com.fitt.gbt.qbank.common.enums;
 

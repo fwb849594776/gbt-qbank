@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by Alibaba.inc All rights reserved
+ * Copyright (c) 2018 by Fitt.inc All rights reserved
  */
 package com.fitt.gbt.qbank.socket;
 
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 
 /**
- * @author : <a href="mailto:congchun.zcc@alibaba-inc.com">congchun.zcc</a>
+ * @author : <a href="mailto:congchun.zcc@Fitt.inc.com">congchun.zcc</a>
  * @version : 1.0.0
  * @description : java.net socket
  * @since : 2018/11/30
