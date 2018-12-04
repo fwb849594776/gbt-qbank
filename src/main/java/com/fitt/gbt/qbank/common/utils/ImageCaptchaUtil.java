@@ -19,7 +19,7 @@ import java.net.URL;
  */
 public class ImageCaptchaUtil {
 
-    public static final String imageDir = "D:\\workspace_self\\gbt-qbank/images/";
+    public static final String imageDir = "./images/";
 
     public static String readImage(String requestUrl) {
         try {

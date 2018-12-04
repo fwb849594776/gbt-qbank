@@ -129,10 +129,15 @@
         </dependency>
 
         <!-- Java OCR -->
+        <!--<dependency>-->
+            <!--<groupId>com.asprise.ocr</groupId>-->
+            <!--<artifactId>java-ocr-api</artifactId>-->
+            <!--<version>15.3.2</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.asprise.ocr</groupId>
             <artifactId>java-ocr-api</artifactId>
-            <version>15.3.2</version>
+            <version>[15,)</version>
         </dependency>
 
         <dependency>
