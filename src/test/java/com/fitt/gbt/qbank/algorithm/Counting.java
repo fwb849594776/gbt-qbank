@@ -40,6 +40,7 @@ public class Counting {
     }
 
     public static void main(String[] args) {
+        System.out.println(10<<1);
         counting(500, 7,25);
     }
 }
