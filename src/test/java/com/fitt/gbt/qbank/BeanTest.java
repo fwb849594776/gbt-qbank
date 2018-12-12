@@ -22,7 +22,16 @@ public class BeanTest {
     public static void main(String[] args) {
         //testBean2Map();
 
-        testGuavaOrdering();
+//        testGuavaOrdering();
+        StringBuffer a = new StringBuffer("A");
+        StringBuffer b = new StringBuffer("b");
+        operate(a, b);
+        System.out.println(a + "." + b);
+    }
+
+    private static void operate(StringBuffer x, StringBuffer y) {
+        x.append(y);
+        y = x;
     }
 
     public static void testComparaObject() {
